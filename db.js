@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 mongoose
   .connect(
-    "mongodb+srv://Covid_warrior:1234@cluster-cvexm.mongodb.net/iternity?retryWrites=true&w=majority",
+    "mongodb+srv://iternity:123456@iternity@cluster0.s1hx0.mongodb.net/test",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .catch((e) => {
