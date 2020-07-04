@@ -9,6 +9,7 @@ import {
   Payment,
   DocumentUpload,
   SignUp,
+  Quiz,
 } from "../pages/pages";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/academic" exact component={AcademicInsert} />
         <Route path="/payment" exact component={Payment} />
         <Route path="/docs" exact component={DocumentUpload} />
+        <Route path="/quiz" exact component={Quiz} />
       </Switch>
       <Footer />
     </Router>
