@@ -710,7 +710,7 @@ class AcademicInsert extends Component {
                 <Link to="/personal">Go to Personal Details</Link>
               </button>
               <button>
-                <Link to="/">Go Home</Link>
+                <Link to="/quiz">Go to Quiz</Link>
               </button>
             </div>
           </div>
