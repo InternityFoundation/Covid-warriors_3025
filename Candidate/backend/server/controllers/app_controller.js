@@ -1,6 +1,7 @@
 const Academic = require("../models/academic_model");
 const Personal = require("../models/personal_model");
-const Job = require("../models/job_model")
+const Job = require("../models/job_model");
+const Quiz = require("../models/quiz_model");
 const multer = require("../node_modules/multer");
 createAcademic = (req, res) => {
   const body = req.body;
@@ -115,9 +116,43 @@ createJob = (req, res) => {
     });
 };
 
+createScore = (req, res) => {
+  const body = req.body;
+  console.log(body);
+
+  if (!body) {
+    return res.status(400).json({
+      success: false,
+      error: "Empty Form",
+    });
+  }
+
+  const job = new Quiz(body);
+
+  if (!job) {
+    return res.status(400).json({ success: false, error: err });
+  }
+
+  job
+    .save()
+    .then(() => {
+      return res.status(201).json({
+        success: true,
+        message: "Quiz Score Updated",
+      });
+    })
+    .catch((error) => {
+      return res.status(400).json({
+        error,
+        message: "Quiz Score not Updated",
+      });
+    });
+};
+
 module.exports = {
   createAcademic,
   getAcademic,
   createPersonal,
   createJob,
+  createScore,
 };
