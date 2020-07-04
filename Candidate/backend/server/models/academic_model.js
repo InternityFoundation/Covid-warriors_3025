@@ -109,6 +109,10 @@ const academic = mongoose.Schema({
     type: Number,
     required: true,
   },
+  Email:{
+     type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Academic", academic);
